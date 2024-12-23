@@ -42,4 +42,12 @@ public class Book extends Item {
     public static Book of(String name, int price, int quantity) {
         return new Book(0L, name, price, quantity, null, null);
     }
+
+    public void change(String name, int price, int quantity, String author, String isbn) {
+        super.setName(name);
+        super.setPrice(price);
+        super.setStockQuantity(quantity);
+        this.setAuthor(author);
+        this.setIsbn(isbn);
+    }
 }
