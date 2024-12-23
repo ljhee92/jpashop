@@ -99,10 +99,7 @@ class OrderServiceTest {
     }
 
     private Item createBook(String name, int price, int stockQuantity) {
-        Item book = new Book();
-        book.setName(name);
-        book.setPrice(price);
-        book.setStockQuantity(stockQuantity);
+        Item book = Book.of(name, price, stockQuantity);
         entityManager.persist(book);
         return book;
     }

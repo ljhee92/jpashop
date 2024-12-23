@@ -24,8 +24,7 @@ class ItemServiceTest {
     @Rollback(value = false)
     public void 상품등록() throws Exception {
         // given
-        Item book = new Book();
-        book.setName("book1");
+        Item book = Book.of("book1");
 
         // when
         Long savedId = itemService.saveItem(book);
