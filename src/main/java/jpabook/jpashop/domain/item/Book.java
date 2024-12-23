@@ -17,7 +17,8 @@ public class Book extends Item {
     private String author;
     private String isbn;
 
-    private Book(String name, int price, int quantity, String author, String isbn) {
+    private Book(Long id, String name, int price, int quantity, String author, String isbn) {
+        super.setId(id);
         super.setName(name);
         super.setPrice(price);
         super.setStockQuantity(quantity);
@@ -26,7 +27,8 @@ public class Book extends Item {
     }
 
     public static Book of(BookForm bookForm) {
-        return new Book(bookForm.getName(),
+        return new Book(bookForm.getId(),
+                bookForm.getName(),
                 bookForm.getPrice(),
                 bookForm.getStockQuantity(),
                 bookForm.getAuthor(),
@@ -34,10 +36,10 @@ public class Book extends Item {
     }
 
     public static Book of(String name) {
-        return new Book(name, 0, 0, null, null);
+        return new Book(0L, name, 0, 0, null, null);
     }
 
     public static Book of(String name, int price, int quantity) {
-        return new Book(name, price, quantity, null, null);
+        return new Book(0L, name, price, quantity, null, null);
     }
 }
