@@ -30,7 +30,7 @@ public class ItemController {
         Book book = Book.of(bookForm);
 
         itemService.saveItem(book);
-        return "redirect:/";
+        return "redirect:/items";
     }
 
     @GetMapping("/items")
